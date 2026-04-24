@@ -1,0 +1,25 @@
+AutoRender 与 GitHub 的 SSH 使用说明
+=====================================
+
+1) 私钥/公钥位置（仅本机、位于本仓库下，不纳入 Git）
+   D:\Desk419\.ssh-local\id_ed25519_autorender      （私钥，勿泄露）
+   D:\Desk419\.ssh-local\id_ed25519_autorender.pub  （公钥，可拷到 GitHub）
+
+2) SSH 客户端配置（已写入用户目录）
+   C:\Users\72988\.ssh\config
+   主机别名：github.com-desk419（对 GitHub 使用上述 IdentityFile）
+
+3) 本仓库 origin 应使用
+   git@github.com-desk419:baobaostar777/AutoRender.git
+
+4) 在 GitHub 添加公钥
+   打开：https://github.com/settings/keys
+   New SSH key -> 将 .pub 文件内容全部粘贴并保存
+
+5) 测试
+   ssh -T git@github.com-desk419
+   成功会提示 "Hi 用户名! You've successfully authenticated..."
+
+6) 推送
+   cd D:\Desk419
+   git push origin main
