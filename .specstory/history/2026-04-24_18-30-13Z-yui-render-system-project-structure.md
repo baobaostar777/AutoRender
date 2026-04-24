@@ -503,3 +503,143 @@ _**Agent (default)**_
 - **邮箱（user.email）**：`baobaostar2026@gmail.com`
 
 并已用 `git config --global` 回读确认，两项都生效。
+
+---
+
+_**User**_
+
+# YUI Box 渲染系统开发规范
+
+## 1. 核心原则
+- **非黑箱原则**：禁止编写任何无法追踪逻辑的脚本。所有 Blender 操作必须有明确的日志输出。
+- **解耦设计**：材质映射、场景构建、渲染执行必须分为独立的 Python 模块。
+- **工具链**：使用 Python 控制 Blender (bpy)，通过 Aider 进行代码重构。
+
+## 2. 业务协议 (参考：小平头 Phase 2 拆件文档)
+- **图层名称审计**：必须严格匹配以下图层，否则拒绝渲染：
+  - `01_Housing_Front`, `01_Housing_Base`, `Lid_Assembly`, `03_Screen_Glass`, `04_Side_Knob`, `06_Light_Pipe`
+- **材质逻辑**：
+  - `01` 开头为壳体，使用 PBR 塑料着色器。
+  - `03` 为玻璃，需开启 Transmission 物理属性。
+  - `04` 为交互件，使用各向异性金属材质。
+
+## 3. 自动化要求
+- 默认使用 Blender Headless (无界面) 模式运行。
+- 相机机位必须基于模型包围盒 (Bounding Box) 自动计算，禁止硬编码坐标。
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The user is sharing a development specification document for the YUI Box Render System. The user shared a YUI Box Render System specification outlining core principles, business protocols, and automation details without requesting any action. The spec emphasizes open development practices, decoupled modules, and automated rendering workflows. I should acknowledge the specification and either save it to the project or ask if the user wants it saved, following the rule about not editing markdown files unless explicitly requested. The user provided a specification for the YUI Box Render System without explicitly requesting file creation. The implementation of the spec would be a substantial task involving multiple modules. I should summarize the spec in Chinese (with English keywords in parentheses), propose a location for it within the YUI_Render_System if the user wants it committed, or begin implementing the modules (auditor, blender_api, main) to align with the specification.</details></think>
+
+_**Agent (default)**_
+
+已理解，后续在 **YUI Box 渲染系统** 里会按下面约定推进（关键词用英文括号标注）。
+
+## 1. 核心原则（principles）
+- **非黑箱（no black box）**：所有对 **Blender** 的操作都要能在日志里追到逻辑；避免「脚本跑了但不知道做了什么」的写法。  
+- **解耦（decoupling）**：**材质映射（material mapping）**、**场景构建（scene build）**、**渲染（render）** 各自独立成 **Python 模块（modules）**，不要揉在一个大文件里。  
+- **工具链（toolchain）**：用 **Python** 调 **bpy**；**重构（refactor）** 可配合 **Aider**。
+
+## 2. 业务协议（protocol）— 与「小平头 Phase 2 拆件文档」一致
+- **图层名审计（layer name audit）**：以下名称必须严格存在/匹配，否则**拒绝渲染（reject render）**：  
+  `01_Housing_Front`, `01_Housing_Base`, `Lid_Assembly`, `03_Screen_Glass`, `04_Side_Knob`, `06_Light_Pipe`  
+- **材质逻辑（material rules）**（按对象/材质命名前缀等现有约定）：  
+  - `01` → 壳体（housing），**PBR 塑料（PBR plastic）** 着色器。  
+  - `03` → 玻璃（glass），**透射（Transmission）** 等物理项要开。  
+  - `04` → 交互件，**各向异性金属（anisotropic metal）**。
+
+## 3. 自动化（automation）
+- 默认 **无头模式（headless）** 跑 Blender。  
+- **相机（camera）** 的机位/构图必须基于**包围盒（Bounding Box）**自动算，**禁止硬编码（no hardcoded）** 世界坐标。
+
+---
+
+和当前仓库里的目录可以对上号：`auditor.py` 负责图层（及后续可扩的规则）**审计**；材质映射与场景/渲染在 `blender_api.py` 或再拆子模块，由 `main.py` 串流程并统一打**日志**。
+
+若你希望这整段**落盘**成项目里的一个文件（例如 `YUI_Render_SYSTEM/...` 下的规范 **Markdown**），可以说一下文件名/路径，我可以按你的结构建；若直接要**按规范把三个 `.py` 和 `cmf_map.json` 写出一版可运行骨架**，也可以说明要优先做「审计 only」还是「连 headless 渲染通一路」优先。
+
+---
+
+_**User**_
+
+创建 .cursorrules (核心指令集)
+在你的项目根目录下新建一个名为 .cursorrules 的文件。这个文件是 Cursor 的“宪法”，它会强制要求 AI 在每一行代码中都遵循我们“非黑箱”的原则。
+
+将以下内容粘贴进去：
+
+Markdown
+# YUI Box 渲染系统开发规范
+
+## 1. 核心原则
+- **非黑箱原则**：禁止编写任何无法追踪逻辑的脚本。所有 Blender 操作必须有明确的日志输出。
+- **解耦设计**：材质映射、场景构建、渲染执行必须分为独立的 Python 模块。
+- **工具链**：使用 Python 控制 Blender (bpy)，通过 Aider 进行代码重构。
+
+## 2. 业务协议 (参考：小平头 Phase 2 拆件文档)
+- **图层名称审计**：必须严格匹配以下图层，否则拒绝渲染：
+  - `01_Housing_Front`, `01_Housing_Base`, `Lid_Assembly`, `03_Screen_Glass`, `04_Side_Knob`, `06_Light_Pipe`
+- **材质逻辑**：
+  - `01` 开头为壳体，使用 PBR 塑料着色器。
+  - `03` 为玻璃，需开启 Transmission 物理属性。
+  - `04` 为交互件，使用各向异性金属材质。
+
+## 3. 自动化要求
+- 默认使用 Blender Headless (无界面) 模式运行。
+- 相机机位必须基于模型包围盒 (Bounding Box) 自动计算，禁止硬编码坐标。
+
+---
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants me to create a file named `.
+```</details></think>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: C:\Users\72988\.cursor\skills-cursor\create-rule\SKILL.md</summary>
+
+</details>
+</tool-use>
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2"><details>
+<summary>Tool use: **read_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<think><details><summary>Thought Process</summary>
+The user explicitly asked for `.
+```</details></think>
+
+_**Agent (default)**_
+
+正在于项目根目录 `d:\Desk419` 创建 `.cursorrules`，并写入你提供的规范全文。
+
+
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: d:\Desk419\.cursorrules</summary>
+
+</details>
+
+</tool-use>
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2"><details>
+<summary>Tool use: **edit_file_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+已在项目根目录创建 **`d:\Desk419\.cursorrules`**，内容即你贴的开发规范（**Markdown** 正文，未包含你消息里的 `Markdown` 标题行）。
+
+**说明**：**Cursor** 新版本更推荐在 **`.cursor/rules/`** 里用带 **frontmatter** 的 **`.mdc` 规则**；你指定的是根目录 **`.cursorrules`**，已按你的要求放好了。若之后发现 AI 对旧格式加载不稳定，可以再加一条等价的 **`.mdc` 规则**，需要的话你可以说一声我帮你迁过去。
