@@ -432,3 +432,74 @@ YUI_Render_System/
 - `src` 下三个 **Python（.py）** 文件已按你树中名称建好，**内容为空**（你之后往里写“模块 A / 驱动 / 入口”即可）。
 
 根路径是：`d:\Desk419\YUI_Render_System\`。若你希望**完全**不出现 `.gitkeep`（和树中字面一致），也可以说明，我按你的规则改一版。
+
+---
+
+_**User**_
+
+git config --global user.name "baobao"
+git config --global user.email "baobaostar2026@gmail.com"
+
+---
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: git config --global user.name "baobao" && git config --global user.email "baobaostar2026@gmail.com" && git config --global --list | findstr "user."</summary>
+
+```bash
+git config --global user.name "baobao" && git config --global user.email "baobaostar2026@gmail.com" && git config --global --list | findstr "user."
+```
+
+```
+����λ�� C:\Users\72988\AppData\Local\Temp\ps-script-d17d523f-58a3-4c0c-ab26-97fbd4390fe6.ps1:7 �ַ�: 40
++ git config --global user.name "baobao" &amp;&amp; git config --global user.em ...
++                                        ~~
+��ǡ�&amp;&amp;�����Ǵ˰汾�е���Ч���ָ�����
+����λ�� C:\Users\72988\AppData\Local\Temp\ps-script-d17d523f-58a3-4c0c-ab26-97fbd4390fe6.ps1:7 �ַ�: 101
++ ...  git config --global user.email "baobaostar2026@gmail.com" &amp;&amp; git con ...
++                                                                ~~
+��ǡ�&amp;&amp;�����Ǵ˰汾�е���Ч���ָ�����
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidEndOfLine
+ 
+
+```
+</details>
+</tool-use>
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2"><details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: git config --global user.name "baobao"; git config --global user.email "baobaostar2026@gmail.com"; git config --global --get-regexp "^user\."</summary>
+
+```bash
+git config --global user.name "baobao"; git config --global user.email "baobaostar2026@gmail.com"; git config --global --get-regexp "^user\."
+```
+
+```
+user.name baobao
+user.email baobaostar2026@gmail.com
+
+```
+</details>
+</tool-use>
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2"><details>
+<summary>Tool use: **run_terminal_command_v2**</summary>
+
+</details></tool-use>
+
+_**Agent (default)**_
+
+已在本机执行全局 **Git（Git）** 配置：
+
+- **用户名（user.name）**：`baobao`
+- **邮箱（user.email）**：`baobaostar2026@gmail.com`
+
+并已用 `git config --global` 回读确认，两项都生效。
