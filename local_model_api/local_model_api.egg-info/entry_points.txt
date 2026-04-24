@@ -1,0 +1,2 @@
+[console_scripts]
+model-api = local_model_api.__main__:main

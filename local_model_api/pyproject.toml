@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local_model_api"
+version = "0.1.0"
+description = "Local .env API key registry and model->provider resolution for aider and scripts"
+requires-python = ">=3.10"
+dependencies = [
+  "python-dotenv>=1.0.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["local_model_api*"]
+
+[project.scripts]
+model-api = "local_model_api.__main__:main"
