@@ -1,1 +1,69 @@
-{}
+{
+  "description": "YUI Box Phase2 — 图层( layer )与 CMF 材质映射。base_color 为线性 RGBA；transmission 为 0~1，与 BSDF 透射权重一致。",
+  "source_doc": "YUI_Box_Phase2_Disassembly Instructions.md 第1章表格",
+  "auditor_constant": "REQUIRED_LAYERS_PHASE2",
+  "version": 1,
+  "layers": [
+    {
+      "layer_name": "01_Housing_Front",
+      "material_name": "M_Phase2_Housing_Front_Plast_Light",
+      "cmf_note": "浅灰实色壳体",
+      "pbr": {
+        "base_color": [0.78, 0.8, 0.82, 1.0],
+        "roughness": 0.45,
+        "metallic": 0.0
+      }
+    },
+    {
+      "layer_name": "01_Housing_Base",
+      "material_name": "M_Phase2_Housing_Base_Plast_Dark",
+      "cmf_note": "深灰实色底座",
+      "pbr": {
+        "base_color": [0.3, 0.31, 0.33, 1.0],
+        "roughness": 0.5,
+        "metallic": 0.0
+      }
+    },
+    {
+      "layer_name": "02_Lid_Assembly",
+      "material_name": "M_Phase2_Lid_Assembly_Plast_Light",
+      "cmf_note": "浅灰实色壳体",
+      "pbr": {
+        "base_color": [0.78, 0.8, 0.82, 1.0],
+        "roughness": 0.45,
+        "metallic": 0.0
+      }
+    },
+    {
+      "layer_name": "03_Screen_Glass",
+      "material_name": "M_Phase2_Screen_Glass_70pct_Transmit",
+      "cmf_note": "70%透明黑玻璃",
+      "pbr": {
+        "base_color": [0.02, 0.02, 0.025, 1.0],
+        "roughness": 0.08,
+        "metallic": 0.0,
+        "transmission": 0.7
+      }
+    },
+    {
+      "layer_name": "04_Interaction",
+      "material_name": "M_Phase2_Interaction_Metal_Light",
+      "cmf_note": "金属质感灰",
+      "pbr": {
+        "base_color": [0.5, 0.51, 0.55, 1.0],
+        "roughness": 0.32,
+        "metallic": 0.9
+      }
+    },
+    {
+      "layer_name": "05_Internal_Parts",
+      "material_name": "M_Phase2_Internal_Resin_Mesh_Mixed",
+      "cmf_note": "高透导光柱/深色网罩",
+      "pbr": {
+        "base_color": [0.12, 0.12, 0.14, 1.0],
+        "roughness": 0.6,
+        "metallic": 0.0
+      }
+    }
+  ]
+}

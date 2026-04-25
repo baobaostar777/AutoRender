@@ -1,0 +1,2 @@
+# auditor.py 扫描 3dm 依赖
+rhino3dm>=8.0.0
