@@ -1,8 +1,13 @@
 {
-  "description": "YUI Box Phase2 — 图层( layer )与 CMF 材质映射。base_color 为线性 RGBA；transmission 为 0~1，与 BSDF 透射权重一致。",
+  "description": "YUI Box Phase2/Phase3 兼容 — 图层( layer )与对象名( object name )到 CMF 材质映射。base_color 为线性 RGBA；transmission 为 0~1。竞品色板( competitive CMF )请在下方 competitor_cmf 写备注后，直接改各条 pbr 数值。可选 pbr 键: is_glass( bool，为 true 时不做工程倒角 bevel )、anisotropic/ior/…(管线后续可按需实现)。",
   "source_doc": "YUI_Box_Phase2_Disassembly Instructions.md 第1章表格",
   "auditor_constant": "REQUIRED_LAYERS_PHASE2",
-  "version": 1,
+  "version": 4,
+  "competitor_cmf": {
+    "status": "stackstyle_round1",
+    "target": "待填入：竞品 PANTONE/RAL、表面处理、膜厚/镀层、雾度等。",
+    "update_hint": "将测量或对标得到的参数写进本文件 layers[] 中对应条目的 pbr 字段；玻璃层( glass )保持 transmission 与 is_glass(可选) 一致。"
+  },
   "layers": [
     {
       "layer_name": "01_Housing_Front",
@@ -39,6 +44,7 @@
       "material_name": "M_Phase2_Screen_Glass_70pct_Transmit",
       "cmf_note": "70%透明黑玻璃",
       "pbr": {
+        "is_glass": true,
         "base_color": [0.02, 0.02, 0.025, 1.0],
         "roughness": 0.08,
         "metallic": 0.0,
@@ -63,6 +69,86 @@
         "base_color": [0.12, 0.12, 0.14, 1.0],
         "roughness": 0.6,
         "metallic": 0.0
+      }
+    },
+    {
+      "layer_name": "01_Front_Main_Shell",
+      "material_name": "M_StackStyle_Front_Shell_Warm",
+      "cmf_note": "StackStyle 第一轮: Phase3 前壳 暖白亲肤( warm skin-tactile ) 塑料",
+      "pbr": {
+        "base_color": [0.96, 0.93, 0.9, 1.0],
+        "roughness": 0.42,
+        "metallic": 0.0
+      }
+    },
+    {
+      "layer_name": "01_Rear_Bottom_Base",
+      "material_name": "M_StackStyle_Rear_Base_Blasted_Al",
+      "cmf_note": "StackStyle 第一轮: Phase3 后底座 深灰喷砂铝( deep gray blasted Al )",
+      "pbr": {
+        "base_color": [0.28, 0.29, 0.31, 1.0],
+        "roughness": 0.35,
+        "metallic": 0.8
+      }
+    },
+    {
+      "layer_name": "Lid_Assembly",
+      "material_name": "M_Phase2_Lid_Assembly_Plast_Light",
+      "cmf_note": "Phase3 对象名映射：顶盖总成 -> 浅灰实色壳体",
+      "pbr": {
+        "base_color": [0.78, 0.8, 0.82, 1.0],
+        "roughness": 0.45,
+        "metallic": 0.0
+      }
+    },
+    {
+      "layer_name": "04_Side_Knob",
+      "material_name": "M_StackStyle_Side_Knob_Industrial_Orange",
+      "cmf_note": "StackStyle 第一轮: 10% 撞色( accent ) 工业橙( industrial orange ) 金属旋钮",
+      "pbr": {
+        "base_color": [1.0, 0.35, 0.0, 1.0],
+        "roughness": 0.36,
+        "metallic": 0.75
+      }
+    },
+    {
+      "layer_name": "Dust_Shield",
+      "material_name": "M_Phase2_Internal_Resin_Mesh_Mixed",
+      "cmf_note": "Phase3 对象名映射：防尘网罩 -> 内部深色/树脂混合材质",
+      "pbr": {
+        "base_color": [0.12, 0.12, 0.14, 1.0],
+        "roughness": 0.6,
+        "metallic": 0.0
+      }
+    },
+    {
+      "layer_name": "LED_Indicator",
+      "material_name": "M_Phase2_Internal_Resin_Mesh_Mixed",
+      "cmf_note": "Phase3 对象名映射：LED 指示件 -> 内部件材质（可后续细分导光）",
+      "pbr": {
+        "base_color": [0.12, 0.12, 0.14, 1.0],
+        "roughness": 0.6,
+        "metallic": 0.0
+      }
+    },
+    {
+      "layer_name": "Hinge_L",
+      "material_name": "M_Phase2_Interaction_Metal_Light",
+      "cmf_note": "Phase3 对象名映射：左铰链 -> 金属材质",
+      "pbr": {
+        "base_color": [0.5, 0.51, 0.55, 1.0],
+        "roughness": 0.32,
+        "metallic": 0.9
+      }
+    },
+    {
+      "layer_name": "Hinge_R",
+      "material_name": "M_Phase2_Interaction_Metal_Light",
+      "cmf_note": "Phase3 对象名映射：右铰链 -> 金属材质",
+      "pbr": {
+        "base_color": [0.5, 0.51, 0.55, 1.0],
+        "roughness": 0.32,
+        "metallic": 0.9
       }
     }
   ]

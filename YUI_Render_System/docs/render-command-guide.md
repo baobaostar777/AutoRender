@@ -13,9 +13,22 @@
 
 所有命令都通过以下入口执行：
 
-`python src/main.py render ...`
+`python src/main.py <audit|render|preview> ...`
 
 该入口会先执行审计（audit），通过后才启动 Blender 自动流水线（pipeline）。
+
+## 快速预览（推荐实时查看）
+
+```bash
+python src/main.py preview --phase auto --keep --log-file .\logs\preview-live.log
+```
+
+- 用途：一键构建并打开 `preview_scene.blend`，在 Blender GUI 实时看结果
+- 行为：
+  - 先审计（audit）
+  - 后台执行导入+材质挂载（不出 PNG）
+  - 自动打开 `output/preview_scene.blend`
+  - 若检测到上一次 `preview` 打开的 Blender 窗口，会先关闭旧窗口再打开新窗口（避免双窗口混淆）
 
 ## 四条常用命令与含义
 
@@ -70,6 +83,21 @@ python src/main.py render --phase auto --keep --strict-stp
 - `--keep`：保留灯光与相机，仅更新几何体
 - `--strict-stp`：强制要求同名 `.stp` 存在
 - `--blender "D:\Blender\blender.exe"`：手动指定 Blender 路径（path），仅在自动识别失败时使用
+- `--log-file .\logs\render-latest.log`：将控制台输出同步写入日志文件（自动创建目录）
+
+## 日志示例
+
+### 渲染并落盘日志
+
+```bash
+python src/main.py render --phase auto --log-file .\logs\render-latest.log
+```
+
+### 仅审计并落盘日志
+
+```bash
+python src/main.py audit --phase auto --log-file .\logs\audit-latest.log
+```
 
 ## 推荐使用策略
 

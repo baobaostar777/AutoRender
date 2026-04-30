@@ -1,0 +1,475 @@
+[INFO] 日志写入文件: D:\Desk419\YUI_Render_System\logs\render-latest.log
+[INFO] render 前置审计开始
+INFO auditor: 扫描目录(assets): D:\Desk419\YUI_Render_System\assets
+INFO auditor: Phase2 必须图层: 01_Housing_Front, 01_Housing_Base, 02_Lid_Assembly, 03_Screen_Glass, 04_Interaction, 05_Internal_Parts
+INFO auditor: Phase3 必须图层: 01_Main_Body, 02_Top_Lid, 03_Internal, 04_Screen, 05_Internal_Shield, 06_Back_Hardware
+INFO auditor: 从文件名推断为 Phase3: YUI_Box_Phase3_Assembly_V1.3dm
+INFO auditor: 开始审计: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+文件: YUI_Box_Phase3_Assembly_V1.3dm
+  路径: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm
+  使用协议: Phase3
+  状态: 通过 — 必须图层均已出现（按 Phase3 协议）。
+
+[PASS] 审计通过，准备启动 Blender 流水线
+[INFO] Blender 路径: D:\Blender\blender.exe
+[INFO] 启动 blender_auto_pipeline ...
+[INFO] 命令: D:\Blender\blender.exe -b --python-exit-code 1 --python D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py -- --assets D:\Desk419\YUI_Render_System\assets --cmf-map D:\Desk419\YUI_Render_System\config\cmf_map.json --phase auto --default-phase 2
+D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py:271: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+Blender 5.1.0 (hash adfe2921d5f3 built 2026-03-17 01:37:32)
+[blender_auto_pipeline] pipeline 启动，assets=D:\Desk419\YUI_Render_System\assets
+[blender_auto_pipeline] CMF 配置路径: D:\Desk419\YUI_Render_System\config\cmf_map.json
+[blender_auto_pipeline] 已加载 CMF 映射条目: 6
+[blender_auto_pipeline] 资产扫描完成，发现 .3dm 文件数量: 1
+[blender_auto_pipeline] 审计候选文件: YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+[blender_auto_pipeline] 审计通过，选中最新文件: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 最终选择资产: YUI_Box_Phase3_Assembly_V1.3dm, protocol=Phase3
+[blender_auto_pipeline] Manufacturing source verified: YUI_Box_Phase3_Assembly_V1.stp
+[blender_auto_pipeline] 场景清理完成：总对象=3, 删除全部对象
+[blender_auto_pipeline] 单位设置完成：METRIC，scale_length=1.0（1:1）
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_scene.rhino
+[blender_auto_pipeline] 导入失败：operator=bpy.ops.import_scene.rhino, error=Calling operator "bpy.ops.import_scene.rhino" error, could not be found
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 导入成功：operator=bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 3DM 导入完成: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 开始 CMF 自动挂载，MESH 对象数量: 18
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Dust_Shield
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_L
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_R
+[blender_auto_pipeline] 跳过对象（未匹配图层）: LED_Indicator
+[blender_auto_pipeline] 新建材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Rear_Bottom_Base
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Front_Main_Shell
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 04_Side_Knob
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.002
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.003
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.004
+[blender_auto_pipeline] 复用材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass.002, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.004
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.005
+[blender_auto_pipeline] pipeline 执行完成。
+[PASS] render 流水线执行完成
+[INFO] 日志写入文件: D:\Desk419\YUI_Render_System\logs\render-latest.log
+[INFO] render 前置审计开始
+INFO auditor: 扫描目录(assets): D:\Desk419\YUI_Render_System\assets
+INFO auditor: Phase2 必须图层: 01_Housing_Front, 01_Housing_Base, 02_Lid_Assembly, 03_Screen_Glass, 04_Interaction, 05_Internal_Parts
+INFO auditor: Phase3 必须图层: 01_Main_Body, 02_Top_Lid, 03_Internal, 04_Screen, 05_Internal_Shield, 06_Back_Hardware
+INFO auditor: 从文件名推断为 Phase3: YUI_Box_Phase3_Assembly_V1.3dm
+INFO auditor: 开始审计: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+文件: YUI_Box_Phase3_Assembly_V1.3dm
+  路径: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm
+  使用协议: Phase3
+  状态: 通过 — 必须图层均已出现（按 Phase3 协议）。
+
+[PASS] 审计通过，准备启动 Blender 流水线
+[INFO] Blender 路径: D:\Blender\blender.exe
+[INFO] 启动 blender_auto_pipeline ...
+[INFO] 命令: D:\Blender\blender.exe -b --python-exit-code 1 --python D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py -- --assets D:\Desk419\YUI_Render_System\assets --cmf-map D:\Desk419\YUI_Render_System\config\cmf_map.json --phase auto --default-phase 2
+D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py:271: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+Blender 5.1.0 (hash adfe2921d5f3 built 2026-03-17 01:37:32)
+[blender_auto_pipeline] pipeline 启动，assets=D:\Desk419\YUI_Render_System\assets
+[blender_auto_pipeline] CMF 配置路径: D:\Desk419\YUI_Render_System\config\cmf_map.json
+[blender_auto_pipeline] 已加载 CMF 映射条目: 6
+[blender_auto_pipeline] 资产扫描完成，发现 .3dm 文件数量: 1
+[blender_auto_pipeline] 审计候选文件: YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+[blender_auto_pipeline] 审计通过，选中最新文件: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 最终选择资产: YUI_Box_Phase3_Assembly_V1.3dm, protocol=Phase3
+[blender_auto_pipeline] Manufacturing source verified: YUI_Box_Phase3_Assembly_V1.stp
+[blender_auto_pipeline] 场景清理完成：总对象=3, 删除全部对象
+[blender_auto_pipeline] 单位设置完成：METRIC，scale_length=1.0（1:1）
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_scene.rhino
+[blender_auto_pipeline] 导入失败：operator=bpy.ops.import_scene.rhino, error=Calling operator "bpy.ops.import_scene.rhino" error, could not be found
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 导入成功：operator=bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 3DM 导入完成: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 开始 CMF 自动挂载，MESH 对象数量: 18
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Dust_Shield
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_L
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_R
+[blender_auto_pipeline] 跳过对象（未匹配图层）: LED_Indicator
+[blender_auto_pipeline] 新建材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Rear_Bottom_Base
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Front_Main_Shell
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 04_Side_Knob
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.002
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.003
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.004
+[blender_auto_pipeline] 复用材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass.002, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.004
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.005
+[blender_auto_pipeline] pipeline 执行完成。
+[PASS] render 流水线执行完成
+[33m[INFO][0m 日志写入文件: D:\Desk419\YUI_Render_System\logs\render-latest.log
+[33m[INFO][0m render 前置审计开始
+INFO auditor: 扫描目录(assets): D:\Desk419\YUI_Render_System\assets
+INFO auditor: Phase2 必须图层: 01_Housing_Front, 01_Housing_Base, 02_Lid_Assembly, 03_Screen_Glass, 04_Interaction, 05_Internal_Parts
+INFO auditor: Phase3 必须图层: 01_Main_Body, 02_Top_Lid, 03_Internal, 04_Screen, 05_Internal_Shield, 06_Back_Hardware
+INFO auditor: 从文件名推断为 Phase3: YUI_Box_Phase3_Assembly_V1.3dm
+INFO auditor: 开始审计: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+文件: YUI_Box_Phase3_Assembly_V1.3dm
+  路径: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm
+  使用协议: Phase3
+  状态: 通过 — 必须图层均已出现（按 Phase3 协议）。
+
+[32m[PASS][0m 审计通过，准备启动 Blender 流水线
+[33m[INFO][0m Blender 路径: D:\Blender\blender.exe
+[33m[INFO][0m 启动 blender_auto_pipeline ...
+[33m[INFO][0m 命令: D:\Blender\blender.exe -b --python-exit-code 1 --python D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py -- --assets D:\Desk419\YUI_Render_System\assets --cmf-map D:\Desk419\YUI_Render_System\config\cmf_map.json --phase auto --default-phase 2
+D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py:271: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+Blender 5.1.0 (hash adfe2921d5f3 built 2026-03-17 01:37:32)
+[blender_auto_pipeline] pipeline 启动，assets=D:\Desk419\YUI_Render_System\assets
+[blender_auto_pipeline] CMF 配置路径: D:\Desk419\YUI_Render_System\config\cmf_map.json
+[blender_auto_pipeline] 已加载 CMF 映射条目: 6
+[blender_auto_pipeline] 资产扫描完成，发现 .3dm 文件数量: 1
+[blender_auto_pipeline] 审计候选文件: YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+[blender_auto_pipeline] 审计通过，选中最新文件: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 最终选择资产: YUI_Box_Phase3_Assembly_V1.3dm, protocol=Phase3
+[blender_auto_pipeline] Manufacturing source verified: YUI_Box_Phase3_Assembly_V1.stp
+[blender_auto_pipeline] 场景清理完成：总对象=3, 删除全部对象
+[blender_auto_pipeline] 单位设置完成：METRIC，scale_length=1.0（1:1）
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_scene.rhino
+[blender_auto_pipeline] 导入失败：operator=bpy.ops.import_scene.rhino, error=Calling operator "bpy.ops.import_scene.rhino" error, could not be found
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 导入成功：operator=bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 3DM 导入完成: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 开始 CMF 自动挂载，MESH 对象数量: 18
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Dust_Shield
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_L
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_R
+[blender_auto_pipeline] 跳过对象（未匹配图层）: LED_Indicator
+[blender_auto_pipeline] 新建材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Rear_Bottom_Base
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Front_Main_Shell
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 04_Side_Knob
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.002
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.003
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.004
+[blender_auto_pipeline] 复用材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass.002, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.004
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.005
+[blender_auto_pipeline] pipeline 执行完成。
+[32m[PASS][0m render 流水线执行完成
+[INFO] 日志写入文件: D:\Desk419\YUI_Render_System\logs\render-latest.log
+[INFO] render 前置审计开始
+INFO auditor: 扫描目录(assets): D:\Desk419\YUI_Render_System\assets
+INFO auditor: Phase2 必须图层: 01_Housing_Front, 01_Housing_Base, 02_Lid_Assembly, 03_Screen_Glass, 04_Interaction, 05_Internal_Parts
+INFO auditor: Phase3 必须图层: 01_Main_Body, 02_Top_Lid, 03_Internal, 04_Screen, 05_Internal_Shield, 06_Back_Hardware
+INFO auditor: 从文件名推断为 Phase3: YUI_Box_Phase3_Assembly_V1.3dm
+INFO auditor: 开始审计: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+文件: YUI_Box_Phase3_Assembly_V1.3dm
+  路径: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm
+  使用协议: Phase3
+  状态: 通过 — 必须图层均已出现（按 Phase3 协议）。
+
+[PASS] 审计通过，准备启动 Blender 流水线
+[INFO] Blender 路径: D:\Blender\blender.exe
+[INFO] 启动 blender_auto_pipeline ...
+[INFO] 命令: D:\Blender\blender.exe -b --python-exit-code 1 --python D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py -- --assets D:\Desk419\YUI_Render_System\assets --cmf-map D:\Desk419\YUI_Render_System\config\cmf_map.json --output-dir D:\Desk419\YUI_Render_System\output --phase auto --default-phase 2
+D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py:278: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+Traceback (most recent call last):
+  File "D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py", line 479, in <module>
+    raise SystemExit(run_pipeline(parsed))
+                     ~~~~~~~~~~~~^^^^^^^^
+  File "D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py", line 457, in run_pipeline
+    _render_still(args.output_dir.resolve(), selected_3dm, keep_mode=args.keep)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py", line 415, in _render_still
+    scene.render.engine = "BLENDER_EEVEE_NEXT"
+    ^^^^^^^^^^^^^^^^^^^
+TypeError: bpy_struct: item.attr = val: enum "BLENDER_EEVEE_NEXT" not found in ('BLENDER_EEVEE', 'BLENDER_WORKBENCH', 'CYCLES')
+[blender_auto_pipeline] pipeline 启动，assets=D:\Desk419\YUI_Render_System\assets
+[blender_auto_pipeline] CMF 配置路径: D:\Desk419\YUI_Render_System\config\cmf_map.json
+[blender_auto_pipeline] 已加载 CMF 映射条目: 6
+[blender_auto_pipeline] 资产扫描完成，发现 .3dm 文件数量: 1
+[blender_auto_pipeline] 审计候选文件: YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+[blender_auto_pipeline] 审计通过，选中最新文件: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 最终选择资产: YUI_Box_Phase3_Assembly_V1.3dm, protocol=Phase3
+[blender_auto_pipeline] Manufacturing source verified: YUI_Box_Phase3_Assembly_V1.stp
+[blender_auto_pipeline] 场景清理完成：总对象=3, 删除全部对象
+[blender_auto_pipeline] 单位设置完成：METRIC，scale_length=1.0（1:1）
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_scene.rhino
+[blender_auto_pipeline] 导入失败：operator=bpy.ops.import_scene.rhino, error=Calling operator "bpy.ops.import_scene.rhino" error, could not be found
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 导入成功：operator=bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 3DM 导入完成: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 开始 CMF 自动挂载，MESH 对象数量: 18
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Dust_Shield
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_L
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_R
+[blender_auto_pipeline] 跳过对象（未匹配图层）: LED_Indicator
+[blender_auto_pipeline] 新建材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Rear_Bottom_Base
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Front_Main_Shell
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 04_Side_Knob
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.002
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.003
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.004
+[blender_auto_pipeline] 复用材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass.002, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.004
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.005
+[blender_auto_pipeline] 新建自动相机: AutoCamera
+
+Error: script failed, file: 'D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py', exiting.
+Blender 5.1.0 (hash adfe2921d5f3 built 2026-03-17 01:37:32)
+
+Blender quit
+[FAIL] render 流水线失败，退出码: 1
+[INFO] 日志写入文件: D:\Desk419\YUI_Render_System\logs\render-latest.log
+[INFO] render 前置审计开始
+INFO auditor: 扫描目录(assets): D:\Desk419\YUI_Render_System\assets
+INFO auditor: Phase2 必须图层: 01_Housing_Front, 01_Housing_Base, 02_Lid_Assembly, 03_Screen_Glass, 04_Interaction, 05_Internal_Parts
+INFO auditor: Phase3 必须图层: 01_Main_Body, 02_Top_Lid, 03_Internal, 04_Screen, 05_Internal_Shield, 06_Back_Hardware
+INFO auditor: 从文件名推断为 Phase3: YUI_Box_Phase3_Assembly_V1.3dm
+INFO auditor: 开始审计: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+文件: YUI_Box_Phase3_Assembly_V1.3dm
+  路径: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm
+  使用协议: Phase3
+  状态: 通过 — 必须图层均已出现（按 Phase3 协议）。
+
+[PASS] 审计通过，准备启动 Blender 流水线
+[INFO] Blender 路径: D:\Blender\blender.exe
+[INFO] 启动 blender_auto_pipeline ...
+[INFO] 命令: D:\Blender\blender.exe -b --python-exit-code 1 --python D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py -- --assets D:\Desk419\YUI_Render_System\assets --cmf-map D:\Desk419\YUI_Render_System\config\cmf_map.json --output-dir D:\Desk419\YUI_Render_System\output --phase auto --default-phase 2
+D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py:278: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+00:01.968  render           | Saved: 'D:\Desk419\YUI_Render_System\output\YUI_Box_Phase3_Assembly_V1_20260425_123348.png'
+Blender 5.1.0 (hash adfe2921d5f3 built 2026-03-17 01:37:32)
+[blender_auto_pipeline] pipeline 启动，assets=D:\Desk419\YUI_Render_System\assets
+[blender_auto_pipeline] CMF 配置路径: D:\Desk419\YUI_Render_System\config\cmf_map.json
+[blender_auto_pipeline] 已加载 CMF 映射条目: 6
+[blender_auto_pipeline] 资产扫描完成，发现 .3dm 文件数量: 1
+[blender_auto_pipeline] 审计候选文件: YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+[blender_auto_pipeline] 审计通过，选中最新文件: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 最终选择资产: YUI_Box_Phase3_Assembly_V1.3dm, protocol=Phase3
+[blender_auto_pipeline] Manufacturing source verified: YUI_Box_Phase3_Assembly_V1.stp
+[blender_auto_pipeline] 场景清理完成：总对象=3, 删除全部对象
+[blender_auto_pipeline] 单位设置完成：METRIC，scale_length=1.0（1:1）
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_scene.rhino
+[blender_auto_pipeline] 导入失败：operator=bpy.ops.import_scene.rhino, error=Calling operator "bpy.ops.import_scene.rhino" error, could not be found
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 导入成功：operator=bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 3DM 导入完成: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 开始 CMF 自动挂载，MESH 对象数量: 18
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Dust_Shield
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_L
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_R
+[blender_auto_pipeline] 跳过对象（未匹配图层）: LED_Indicator
+[blender_auto_pipeline] 新建材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Rear_Bottom_Base
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Front_Main_Shell
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 04_Side_Knob
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.002
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.003
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.004
+[blender_auto_pipeline] 复用材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass.002, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.004
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.005
+[blender_auto_pipeline] 新建自动相机: AutoCamera
+[blender_auto_pipeline] 渲染引擎: BLENDER_EEVEE
+[blender_auto_pipeline] 开始渲染静帧: D:\Desk419\YUI_Render_System\output\YUI_Box_Phase3_Assembly_V1_20260425_123348.png
+[blender_auto_pipeline] 渲染完成: D:\Desk419\YUI_Render_System\output\YUI_Box_Phase3_Assembly_V1_20260425_123348.png
+[blender_auto_pipeline] pipeline 执行完成。
+[PASS] render 流水线执行完成
+[INFO] 日志写入文件: D:\Desk419\YUI_Render_System\logs\render-latest.log
+[INFO] render 前置审计开始
+INFO auditor: 扫描目录(assets): D:\Desk419\YUI_Render_System\assets
+INFO auditor: Phase2 必须图层: 01_Housing_Front, 01_Housing_Base, 02_Lid_Assembly, 03_Screen_Glass, 04_Interaction, 05_Internal_Parts
+INFO auditor: Phase3 必须图层: 01_Main_Body, 02_Top_Lid, 03_Internal, 04_Screen, 05_Internal_Shield, 06_Back_Hardware
+INFO auditor: 从文件名推断为 Phase3: YUI_Box_Phase3_Assembly_V1.3dm
+INFO auditor: 开始审计: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+文件: YUI_Box_Phase3_Assembly_V1.3dm
+  路径: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm
+  使用协议: Phase3
+  状态: 通过 — 必须图层均已出现（按 Phase3 协议）。
+
+[PASS] 审计通过，准备启动 Blender 流水线
+[INFO] Blender 路径: D:\Blender\blender.exe
+[INFO] 启动 blender_auto_pipeline ...
+[INFO] 命令: D:\Blender\blender.exe -b --python-exit-code 1 --python D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py -- --assets D:\Desk419\YUI_Render_System\assets --cmf-map D:\Desk419\YUI_Render_System\config\cmf_map.json --output-dir D:\Desk419\YUI_Render_System\output --phase auto --default-phase 2
+D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py:278: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py:454: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world.use_nodes = True
+00:01.890  render           | Saved: 'D:\Desk419\YUI_Render_System\output\YUI_Box_Phase3_Assembly_V1_20260425_123626.png'
+Blender 5.1.0 (hash adfe2921d5f3 built 2026-03-17 01:37:32)
+[blender_auto_pipeline] pipeline 启动，assets=D:\Desk419\YUI_Render_System\assets
+[blender_auto_pipeline] CMF 配置路径: D:\Desk419\YUI_Render_System\config\cmf_map.json
+[blender_auto_pipeline] 已加载 CMF 映射条目: 6
+[blender_auto_pipeline] 资产扫描完成，发现 .3dm 文件数量: 1
+[blender_auto_pipeline] 审计候选文件: YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+[blender_auto_pipeline] 审计通过，选中最新文件: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 最终选择资产: YUI_Box_Phase3_Assembly_V1.3dm, protocol=Phase3
+[blender_auto_pipeline] Manufacturing source verified: YUI_Box_Phase3_Assembly_V1.stp
+[blender_auto_pipeline] 场景清理完成：总对象=3, 删除全部对象
+[blender_auto_pipeline] 单位设置完成：METRIC，scale_length=1.0（1:1）
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_scene.rhino
+[blender_auto_pipeline] 导入失败：operator=bpy.ops.import_scene.rhino, error=Calling operator "bpy.ops.import_scene.rhino" error, could not be found
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 导入成功：operator=bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 3DM 导入完成: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 开始 CMF 自动挂载，MESH 对象数量: 18
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Dust_Shield
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_L
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Hinge_R
+[blender_auto_pipeline] 跳过对象（未匹配图层）: LED_Indicator
+[blender_auto_pipeline] 新建材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Rear_Bottom_Base
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 01_Front_Main_Shell
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 04_Side_Knob
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.001
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.002
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.003
+[blender_auto_pipeline] 跳过对象（未匹配图层）: Lid_Assembly.004
+[blender_auto_pipeline] 复用材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass.002, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.004
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.005
+[blender_auto_pipeline] 新建自动相机: AutoCamera
+[blender_auto_pipeline] 自动补光完成：已创建三点光 (Key/Fill/Rim)
+[blender_auto_pipeline] 世界光与曝光已调优：World Strength=0.9, Exposure=0.8
+[blender_auto_pipeline] 渲染引擎: BLENDER_EEVEE
+[blender_auto_pipeline] 开始渲染静帧: D:\Desk419\YUI_Render_System\output\YUI_Box_Phase3_Assembly_V1_20260425_123626.png
+[blender_auto_pipeline] 渲染完成: D:\Desk419\YUI_Render_System\output\YUI_Box_Phase3_Assembly_V1_20260425_123626.png
+[blender_auto_pipeline] pipeline 执行完成。
+[PASS] render 流水线执行完成
+[INFO] 日志写入文件: D:\Desk419\YUI_Render_System\logs\render-latest.log
+[INFO] render 前置审计开始
+INFO auditor: 扫描目录(assets): D:\Desk419\YUI_Render_System\assets
+INFO auditor: Phase2 必须图层: 01_Housing_Front, 01_Housing_Base, 02_Lid_Assembly, 03_Screen_Glass, 04_Interaction, 05_Internal_Parts
+INFO auditor: Phase3 必须图层: 01_Main_Body, 02_Top_Lid, 03_Internal, 04_Screen, 05_Internal_Shield, 06_Back_Hardware
+INFO auditor: 从文件名推断为 Phase3: YUI_Box_Phase3_Assembly_V1.3dm
+INFO auditor: 开始审计: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+文件: YUI_Box_Phase3_Assembly_V1.3dm
+  路径: D:\Desk419\YUI_Render_System\assets\YUI_Box_Phase3_Assembly_V1.3dm
+  使用协议: Phase3
+  状态: 通过 — 必须图层均已出现（按 Phase3 协议）。
+
+[PASS] 审计通过，准备启动 Blender 流水线
+[INFO] Blender 路径: D:\Blender\blender.exe
+[INFO] 启动 blender_auto_pipeline ...
+[INFO] 命令: D:\Blender\blender.exe -b --python-exit-code 1 --python D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py -- --assets D:\Desk419\YUI_Render_System\assets --cmf-map D:\Desk419\YUI_Render_System\config\cmf_map.json --output-dir D:\Desk419\YUI_Render_System\output --phase auto --default-phase 2
+D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py:278: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+D:\Desk419\YUI_Render_System\src\blender_auto_pipeline.py:454: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world.use_nodes = True
+00:01.828  render           | Saved: 'D:\Desk419\YUI_Render_System\output\YUI_Box_Phase3_Assembly_V1_20260425_123904.png'
+Blender 5.1.0 (hash adfe2921d5f3 built 2026-03-17 01:37:32)
+[blender_auto_pipeline] pipeline 启动，assets=D:\Desk419\YUI_Render_System\assets
+[blender_auto_pipeline] CMF 配置路径: D:\Desk419\YUI_Render_System\config\cmf_map.json
+[blender_auto_pipeline] 已加载 CMF 映射条目: 14
+[blender_auto_pipeline] 资产扫描完成，发现 .3dm 文件数量: 1
+[blender_auto_pipeline] 审计候选文件: YUI_Box_Phase3_Assembly_V1.3dm (Phase3)
+[blender_auto_pipeline] 审计通过，选中最新文件: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 最终选择资产: YUI_Box_Phase3_Assembly_V1.3dm, protocol=Phase3
+[blender_auto_pipeline] Manufacturing source verified: YUI_Box_Phase3_Assembly_V1.stp
+[blender_auto_pipeline] 场景清理完成：总对象=3, 删除全部对象
+[blender_auto_pipeline] 单位设置完成：METRIC，scale_length=1.0（1:1）
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_scene.rhino
+[blender_auto_pipeline] 导入失败：operator=bpy.ops.import_scene.rhino, error=Calling operator "bpy.ops.import_scene.rhino" error, could not be found
+[blender_auto_pipeline] 尝试导入 operator: bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 导入成功：operator=bpy.ops.import_3dm.some_data
+[blender_auto_pipeline] 3DM 导入完成: YUI_Box_Phase3_Assembly_V1.3dm
+[blender_auto_pipeline] 开始 CMF 自动挂载，MESH 对象数量: 18
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.001
+[blender_auto_pipeline] 新建材质: M_Phase2_Internal_Resin_Mesh_Mixed
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Internal_Resin_Mesh_Mixed, base_color=[0.12, 0.12, 0.14, 1.0], roughness=0.6, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=Dust_Shield, layer=Dust_Shield, material=M_Phase2_Internal_Resin_Mesh_Mixed
+[blender_auto_pipeline] 新建材质: M_Phase2_Interaction_Metal_Light
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Interaction_Metal_Light, base_color=[0.5, 0.51, 0.55, 1.0], roughness=0.32, metallic=0.9
+[blender_auto_pipeline] 材质挂载成功: object=Hinge_L, layer=Hinge_L, material=M_Phase2_Interaction_Metal_Light
+[blender_auto_pipeline] 复用材质: M_Phase2_Interaction_Metal_Light
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Interaction_Metal_Light, base_color=[0.5, 0.51, 0.55, 1.0], roughness=0.32, metallic=0.9
+[blender_auto_pipeline] 材质挂载成功: object=Hinge_R, layer=Hinge_R, material=M_Phase2_Interaction_Metal_Light
+[blender_auto_pipeline] 复用材质: M_Phase2_Internal_Resin_Mesh_Mixed
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Internal_Resin_Mesh_Mixed, base_color=[0.12, 0.12, 0.14, 1.0], roughness=0.6, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=LED_Indicator, layer=LED_Indicator, material=M_Phase2_Internal_Resin_Mesh_Mixed
+[blender_auto_pipeline] 新建材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 新建材质: M_Phase2_Housing_Base_Plast_Dark
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Housing_Base_Plast_Dark, base_color=[0.3, 0.31, 0.33, 1.0], roughness=0.5, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=01_Rear_Bottom_Base, layer=01_Rear_Bottom_Base, material=M_Phase2_Housing_Base_Plast_Dark
+[blender_auto_pipeline] 新建材质: M_Phase2_Housing_Front_Plast_Light
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Housing_Front_Plast_Light, base_color=[0.78, 0.8, 0.82, 1.0], roughness=0.45, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=01_Front_Main_Shell, layer=01_Front_Main_Shell, material=M_Phase2_Housing_Front_Plast_Light
+[blender_auto_pipeline] 复用材质: M_Phase2_Interaction_Metal_Light
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Interaction_Metal_Light, base_color=[0.5, 0.51, 0.55, 1.0], roughness=0.32, metallic=0.9
+[blender_auto_pipeline] 材质挂载成功: object=04_Side_Knob, layer=04_Side_Knob, material=M_Phase2_Interaction_Metal_Light
+[blender_auto_pipeline] 新建材质: M_Phase2_Lid_Assembly_Plast_Light
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Lid_Assembly_Plast_Light, base_color=[0.78, 0.8, 0.82, 1.0], roughness=0.45, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=Lid_Assembly, layer=Lid_Assembly, material=M_Phase2_Lid_Assembly_Plast_Light
+[blender_auto_pipeline] 复用材质: M_Phase2_Lid_Assembly_Plast_Light
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Lid_Assembly_Plast_Light, base_color=[0.78, 0.8, 0.82, 1.0], roughness=0.45, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=Lid_Assembly.001, layer=Lid_Assembly, material=M_Phase2_Lid_Assembly_Plast_Light
+[blender_auto_pipeline] 复用材质: M_Phase2_Lid_Assembly_Plast_Light
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Lid_Assembly_Plast_Light, base_color=[0.78, 0.8, 0.82, 1.0], roughness=0.45, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=Lid_Assembly.002, layer=Lid_Assembly, material=M_Phase2_Lid_Assembly_Plast_Light
+[blender_auto_pipeline] 复用材质: M_Phase2_Lid_Assembly_Plast_Light
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Lid_Assembly_Plast_Light, base_color=[0.78, 0.8, 0.82, 1.0], roughness=0.45, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=Lid_Assembly.003, layer=Lid_Assembly, material=M_Phase2_Lid_Assembly_Plast_Light
+[blender_auto_pipeline] 复用材质: M_Phase2_Lid_Assembly_Plast_Light
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Lid_Assembly_Plast_Light, base_color=[0.78, 0.8, 0.82, 1.0], roughness=0.45, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=Lid_Assembly.004, layer=Lid_Assembly, material=M_Phase2_Lid_Assembly_Plast_Light
+[blender_auto_pipeline] 复用材质: M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 材质参数已设置: M_Phase2_Screen_Glass_70pct_Transmit, base_color=[0.02, 0.02, 0.025, 1.0], roughness=0.08, metallic=0.0
+[blender_auto_pipeline] 材质挂载成功: object=03_Screen_Glass.002, layer=03_Screen_Glass, material=M_Phase2_Screen_Glass_70pct_Transmit
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.004
+[blender_auto_pipeline] 跳过对象（未匹配图层）: 物体.005
+[blender_auto_pipeline] 新建自动相机: AutoCamera
+[blender_auto_pipeline] 自动补光完成：已创建三点光 (Key/Fill/Rim)
+[blender_auto_pipeline] 世界光与曝光已调优：World Strength=0.9, Exposure=0.8
+[blender_auto_pipeline] 渲染引擎: BLENDER_EEVEE
+[blender_auto_pipeline] 开始渲染静帧: D:\Desk419\YUI_Render_System\output\YUI_Box_Phase3_Assembly_V1_20260425_123904.png
+[blender_auto_pipeline] 渲染完成: D:\Desk419\YUI_Render_System\output\YUI_Box_Phase3_Assembly_V1_20260425_123904.png
+[blender_auto_pipeline] pipeline 执行完成。
+[PASS] render 流水线执行完成

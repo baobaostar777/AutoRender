@@ -1,0 +1,89 @@
+{
+  "description": "Desk419 语义优先渲染映射：不依赖固定结构编号，只根据对象/图层/属性里的材质语义关键词匹配。layers[] 从上到下定优先级（先命中先生效）；支持 match_contains_any / match_prefixes / match_regex / exclude_keywords；未命中由 is_fallback=true 统一兜底。",
+  "version": 1,
+  "layers": [
+    {
+      "layer_name": "desk419_accent_orange",
+      "material_name": "M_StackStyle_Side_Knob_Industrial_Orange",
+      "cmf_note": "撞色件优先（名称出现 Accent/Color/Orange/Knob 等）",
+      "match_contains_any": ["Accent", "Color", "Orange", "Knob", "Button"],
+      "exclude_keywords": ["Glass", "Lens", "Window", "Screen"],
+      "pbr": {
+        "base_color": [1.0, 0.35, 0.0, 1.0],
+        "roughness": 0.36,
+        "metallic": 0.75
+      }
+    },
+    {
+      "layer_name": "desk419_screen_glass",
+      "material_name": "M_Phase2_Screen_Glass_70pct_Transmit",
+      "cmf_note": "玻璃类优先（名称出现 Glass/Lens/Window/Screen）",
+      "match_contains_any": ["Glass", "Lens", "Window", "Screen", "Cover Lens", "Screen_Glass"],
+      "pbr": {
+        "is_glass": true,
+        "base_color": [0.02, 0.02, 0.025, 1.0],
+        "roughness": 0.08,
+        "metallic": 0.0,
+        "transmission": 0.7
+      }
+    },
+    {
+      "layer_name": "desk419_dense_holes",
+      "material_name": "M_Phase2_Internal_Resin_Mesh_Mixed",
+      "cmf_note": "网孔/通风区（名称出现 Hole/Mesh/Grille/Vent）",
+      "match_contains_any": ["Hole", "Holes", "Mesh", "Grille", "Vent", "Perforated"],
+      "pbr": {
+        "base_color": [0.12, 0.12, 0.14, 1.0],
+        "roughness": 0.65,
+        "metallic": 0.0
+      }
+    },
+    {
+      "layer_name": "desk419_metal_parts",
+      "material_name": "M_Phase2_Interaction_Metal_Light",
+      "cmf_note": "通用金属件（名称出现 Metal/Al/Aluminum/Switch/Bluetooth/Bracket）",
+      "match_contains_any": ["Metal", "Aluminum", "Al", "Switch", "Bluetooth", "Blueteeth", "Bracket", "Frame", "Base"],
+      "exclude_keywords": ["Glass", "Lens", "Window", "Screen", "Accent", "Color", "Orange"],
+      "pbr": {
+        "base_color": [0.5, 0.51, 0.55, 1.0],
+        "roughness": 0.34,
+        "metallic": 0.85
+      }
+    },
+    {
+      "layer_name": "desk419_general_plastic_shell",
+      "material_name": "M_StackStyle_Front_Shell_Warm",
+      "cmf_note": "通用塑料壳体（Shell/Body/Housing/Case）",
+      "match_contains_any": ["Shell", "Body", "Housing", "Case", "Main", "Front", "Rear"],
+      "exclude_keywords": ["Glass", "Lens", "Window", "Screen", "Metal", "Aluminum", "Switch", "Accent", "Color", "Orange"],
+      "pbr": {
+        "base_color": [0.96, 0.93, 0.9, 1.0],
+        "roughness": 0.42,
+        "metallic": 0.0
+      }
+    },
+    {
+      "layer_name": "desk419_main_body_residual",
+      "material_name": "M_Phase2_Lid_Assembly_Plast_Light",
+      "cmf_note": "塑料剩余件（主体现代浅灰）",
+      "match_contains_any": ["Main_Body", "Body", "Lid", "Cover", "Panel"],
+      "exclude_keywords": ["Glass", "Lens", "Window", "Screen", "Metal", "Aluminum", "Accent", "Color", "Orange"],
+      "pbr": {
+        "base_color": [0.78, 0.8, 0.82, 1.0],
+        "roughness": 0.45,
+        "metallic": 0.0
+      }
+    },
+    {
+      "layer_name": "desk419_fallback_neutral_gray",
+      "material_name": "M_Desk419_Fallback_Neutral_Gray",
+      "cmf_note": "兜底：任何未命中的对象都给 90% 基调的中性哑光灰",
+      "is_fallback": true,
+      "pbr": {
+        "base_color": [0.32, 0.33, 0.35, 1.0],
+        "roughness": 0.55,
+        "metallic": 0.0
+      }
+    }
+  ]
+}
